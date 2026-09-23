@@ -1,30 +1,15 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-# SORRY THIS IS SO DISORGANIZED PLEASE ORGANIZE AND MOVE THINGS AROUND HOWEVER YOU WANT!!
+﻿# SORRY THIS IS SO DISORGANIZED PLEASE ORGANIZE AND MOVE THINGS AROUND HOWEVER YOU WANT!!
 # i will probably separate these into different script files so that its easier to read
 define p = Character("Placeholder")
 define m = Character("Mika")
 
-# The game starts here.
-
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+## BATHROOM SCENE
 
     scene bathroom
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
     show charactertest at right
-
-    # These display lines of dialogue.
 
     p "Hi guys its me ur programmer for filitober 2026."
 
@@ -54,8 +39,18 @@ label start:
     label restart_choice:
     p "ok do u want to brush ur teeth yet go click the toothbrush (not the soap)"
 
-    #first point and click screen
+    # first point and click interaction
     call screen toothbrush_changer
+
+#for the soap choice
+label um_no:
+
+    m "why would i want to brush my teeth with SOAP"
+    m "freak"
+    m "ok ill make u try again"
+
+    #makes player restart point and click
+    jump restart_choice
 
     #continuation of script
 label continue_on:
@@ -76,6 +71,8 @@ label continue_on:
 
     p "ok time to change scenes"
 
+## WAKE SCENE
+
     scene wake
 
     show charactertest at right
@@ -84,70 +81,11 @@ label continue_on:
     p "look around before we move on"
 
     hide charactertest
+
+    #starts the wake bg point and click
     call screen wake_scene
 
+label wake_continue:
 
-#for the soap choice
-label um_no:
-
-    m "why would i want to brush my teeth with SOAP"
-    m "freak"
-    m "ok ill make u try again"
-
-    #makes player restart point and click
-    jump restart_choice
-
-screen emotion_changer():
-    imagebutton:
-        xalign 0.5
-        yalign 0.5
-        idle "orangesadface.png"
-        hover "redsadface.png"
-        action Jump("continue_on")
-
-screen toothbrush_changer():
-    imagebutton: #for toothbrush
-    # using int for more precise placement
-        xpos int(610) # reminder for mika higher value = move right/lower value = move left
-        ypos int(593) # reminder for mika that higher value = lower placement/lower value = higher placement
-        idle "toothbrush_idle.png"
-        hover "toothbrush_hover.png"
-        action Jump("continue_on")
-
-    imagebutton: #for soap
-        xpos int(1105)
-        ypos int(860)
-        idle "soap_idle.png"
-        hover "soap_hover.png"
-        action Jump("um_no")
-
-# wake scene interactables ##################################################
-
-screen wake_scene():
-    imagebutton: #for casket
-        xpos int(800)
-        ypos int(178)
-        idle "casket_idle"
-        hover "casket_hover"
-        action Jump("clicked_button")
-
-    imagebutton: #for flowers
-        #oh my god i didnt put int..no wonder it took so long to align. js dont touch this lol
-        xpos(75) # reminder for mika higher value = move right/lower value = move left
-        ypos(2) # reminder for mika that higher value = lower placement/lower value = higher placement
-        idle "flowers_idle"
-        hover "flowers_hover"
-        action Jump("clicked_button")
-
-    imagebutton: #forchairs
-        xpos int(487)
-        ypos int(455)
-        idle "chair_idle"
-        hover "chair_hover"
-        action Jump("clicked_button")
-
-label clicked_button:
-    m "ok what else do u wanna press"
-
-    call screen wake_scene
-
+    show charactertest at right
+    p "ok next we need to make sure the player clicks all 3 before moving on"
