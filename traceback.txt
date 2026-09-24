@@ -1,33 +1,39 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/wakescript.rpy", line 60, in script
-    if all([casket, flowers, chairs]):
-  File "game/wakescript.rpy", line 60, in <module>
-    if all([casket, flowers, chairs]):
-            ^^^^^^                    
-NameError: name 'casket' is not defined. Did you mean: 'cast'?
+  File "game/wakescript.rpy", line 47, in script call
+    call check_if_interacted
+  File "game/wakescript.rpy", line 51, in script
+    if casket_click and flowers_click and chairs_click = True:
+  File "game/wakescript.rpy", line 51
+    casket_click and flowers_click and chairs_click = True
+                                                    ^^^^^^
+SyntaxError: invalid syntax
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/wakescript.rpy", line 60, in script
-    if all([casket, flowers, chairs]):
+  File "game/wakescript.rpy", line 47, in script call
+    call check_if_interacted
+  File "game/wakescript.rpy", line 51, in script
+    if casket_click and flowers_click and chairs_click = True:
   File "renpy/ast.py", line 2089, in execute
     if renpy.python.py_eval(condition):
        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
-  File "renpy/python.py", line 1308, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1301, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/wakescript.rpy", line 60, in <module>
-    if all([casket, flowers, chairs]):
-            ^^^^^^                    
-NameError: name 'casket' is not defined. Did you mean: 'cast'?
+  File "renpy/python.py", line 1306, in py_eval
+    code = py_compile(code, "eval")
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1263, in py_compile
+    raise e
+  File "renpy/python.py", line 1193, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, True)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/wakescript.rpy", line 51
+    casket_click and flowers_click and chairs_click = True
+                                                    ^^^^^^
+SyntaxError: invalid syntax
 
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.5.3.26051504
 filitober26 1.0
-Tue Sep 22 20:24:55 2026
+Wed Sep 23 23:00:54 2026

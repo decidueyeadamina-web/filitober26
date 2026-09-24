@@ -1,91 +1,125 @@
-﻿# SORRY THIS IS SO DISORGANIZED PLEASE ORGANIZE AND MOVE THINGS AROUND HOWEVER YOU WANT!!
-# i will probably separate these into different script files so that its easier to read
-define p = Character("Placeholder")
-define m = Character("Mika")
+﻿#p for player soz 
+#any .rpy files ive mentioned are under the game folder
+define p = Character("Mc")
+define m = Character("Mother")
+define c = Character("Cousin")
 
 label start:
 
-## BATHROOM SCENE
+    # sorry i lowk couldnt figure out how else to make sure the player interacted with everything before moving on
+    $ casket_click = False
+    $ flowers_click = False
+    $ chairs_click = False
 
-    scene bathroom
+    scene wake 
 
-    show charactertest at right
+    "In a room full of white flowers, decorations, and plastic chairs, a white casket sits in the middle."
+    "The world seems solemn and still, as if time had just stopped ticking."
+    "The silence is broken as the wake begins and relatives start to trickle in. Most enter silently, some whispering, and a few talking loudly, as if they were simply meeting up."
 
-    p "Hi guys its me ur programmer for filitober 2026."
+    # wake_scene is controlled by wakescript.rpy
+    call screen wake_scene_start
 
-    p "this is a prototype for all the main mechanics of the game."
-
-    p "mainly saying stuff for me but if someone else gets the file prototypes hi :)"
-
-    hide charactertest
-    
-    p "check out this face that's gonna pop up behind me"
-
-    m "sorry it isnt a face anymore i made it toofbrush"
-
-    menu brush_teef:
-        "wow mika thats awful"
-
-        "you suck so bad":
-            p "i cant believe you mika"
-
-        "js a toofbrush no biggie":
-            p "wow ur on his side?"
-
-    label after_menu:
-        "ok whatever move on to the next thing"
-
-    # restart_choice for if player picks soap...freaks...
-    label restart_choice:
-    p "ok do u want to brush ur teeth yet go click the toothbrush (not the soap)"
-
-    # first point and click interaction
-    call screen toothbrush_changer
-
-#for the soap choice
-label um_no:
-
-    m "why would i want to brush my teeth with SOAP"
-    m "freak"
-    m "ok ill make u try again"
-
-    #makes player restart point and click
-    jump restart_choice
-
-    #continuation of script
-label continue_on:
-    
-    show charactertest at right
-    p "omg did u see that hover absolutely steller work."
-
-    #am thinking of just making every interactable object an image button
-    #that way every interactable thing can have a cool hover
-    #or not lmfao either way i can pull up
-
-    #ok i pull up hop out at the after partyyy
-    #ya idgaf what u do lol u do u king
-
-    p "once i get dialogue and a scenes list ill do stuff ill do all the stuff"
-
-    #p "adding this in as a check for changes?"
-
-    p "ok time to change scenes"
-
-## WAKE SCENE
+#label after player interacts with all wake objects, continuation of main script
+label end_wake_scene:
 
     scene wake
 
-    show charactertest at right
+    m "you are back in the main script"
 
-    p "here we are at the wake"
-    p "look around before we move on"
+    show charactertest at right #show mc sad/tired
 
-    hide charactertest
+    "A single woman stands silently in front of the casket, a weary expression on her face."
 
-    #starts the wake bg point and click
-    call screen wake_scene
+    p "..."
+    p "This isn't fair."
+    p "She might still be out there and I’m stuck setting up someone else\s wake."
+    p "I need to find her"
 
-label wake_continue:
+    # show mc sad/tired, show mother neutra/serious
+    
+    m "What are you doing standing around? Go greet your relatives. Don\t forget to bless them."
 
-    show charactertest at right
-    p "ok next we need to make sure the player clicks all 3 before moving on"
+    p "Ugh."
+
+    m "Don't be rude."
+
+    p "I don’t feel well. I’m going home."
+
+    # show mc sad/tied, show mother angry
+
+    m "Ungrateful child. No respect for your elders. Your father would be disappointed."
+
+    # show mc angry, show mother angry
+
+    p "Don\t talk about him just to put me down. It\s not my fault yo-"
+
+    m "Enough"
+    m "Fine. You want to go home? Go home and clean your room."
+    m "I'm tired of seeing your mess."
+
+    # show mc angry
+    
+    p "...Whatever."
+    p "She always has something to nag about."
+    p "I should have ran when I had the chance."
+
+
+    # show fade
+
+    jump porch_scene
+
+
+    # PORCH SCENE HERE
+
+label porch_scene:
+
+    scene porch
+
+    p "I need to keep looking for her..."
+
+    "*CRASH*"
+
+    p "What was that???"
+
+    #replace mc name here
+    "Suddenly, the door is swung open. Standing there with trays in her arms is a girl who looks a few years younger than MC." 
+
+    # show mc sad/tired, show cousin confused
+
+    c "Oh! What are you doing here?"
+
+    p "I don\t feel well."
+
+    c "I\m sorry...Did you get any medicine?"
+
+    # italicize here
+    p "Right. I forgot to stop somewhere...It\s too late now."
+
+    "MC pauses for a moment to think."
+
+    p "Yeah."
+    p "Why are you still here?"
+
+    #replace cousin name here
+    "Cousin notices her hesitation but decides to ignore it."
+
+    # show mc sad/tired, show cousin neutral
+    
+    c "I had to come back for some stuff."
+
+    p "Do you need help?"
+
+    c "No it\s okay. Get some rest."
+
+    p "Okay...See you later."
+
+    c "Be careful okay?"
+
+    p "...I will"
+
+    # show mc sad/tired
+
+    p "Did she see through me?"
+    p "I don\t even care anymore."
+

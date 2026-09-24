@@ -1,7 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 Before loading the script.
-NotADirectoryError: [WinError 267] The directory name is invalid: 'C:\\Users\\PC\\Documents\\filitober26\\game\\wakescript.rpy'
+NotADirectoryError: [WinError 267] The directory name is invalid: 'C:\\Users\\PC\\Documents\\filitober26\\game\\script.rpy'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -27,9 +27,9 @@ Traceback (most recent call last):
   File "renpy/loader.py", line 295, in walkdir
     for de in os.scandir(path):
               ~~~~~~~~~~^^^^^^ 
-NotADirectoryError: [WinError 267] The directory name is invalid: 'C:\\Users\\PC\\Documents\\filitober26\\game\\wakescript.rpy'
+NotADirectoryError: [WinError 267] The directory name is invalid: 'C:\\Users\\PC\\Documents\\filitober26\\game\\script.rpy'
 
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.5.3.26051504
  
-Tue Sep 22 17:27:36 2026
+Wed Sep 23 22:48:56 2026
