@@ -1,33 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/wakescript.rpy", line 60, in script
-    if all([casket, flowers, chairs]):
-  File "game/wakescript.rpy", line 60, in <module>
-    if all([casket, flowers, chairs]):
-            ^^^^^^                    
-NameError: name 'casket' is not defined. Did you mean: 'cast'?
+  File "game/script.rpy", line 269, in script
+    $ bedroomNighstand += 1;
+  File "game/script.rpy", line 269, in <module>
+    $ bedroomNighstand += 1;
+NameError: name 'bedroomNighstand' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
-Traceback (most recent call last):
-  File "game/wakescript.rpy", line 60, in script
-    if all([casket, flowers, chairs]):
-  File "renpy/ast.py", line 2089, in execute
-    if renpy.python.py_eval(condition):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
-  File "renpy/python.py", line 1308, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1301, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/wakescript.rpy", line 60, in <module>
-    if all([casket, flowers, chairs]):
-            ^^^^^^                    
-NameError: name 'casket' is not defined. Did you mean: 'cast'?
+Full traceback:
+  File "game/script.rpy", line 269, in script
+    $ bedroomNighstand += 1;
+  File "/Users/audolojan/Desktop/renpy-8.3.2-sdk/renpy/ast.py", line 821, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/audolojan/Desktop/renpy-8.3.2-sdk/renpy/python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 269, in <module>
+    $ bedroomNighstand += 1;
+NameError: name 'bedroomNighstand' is not defined
 
-Windows-10-10.0.19045-SP0 AMD64
-Ren'Py 8.5.3.26051504
+macOS-14.4-arm64-arm-64bit arm64
+Ren'Py 8.3.2.24090902
 filitober26 1.0
-Tue Sep 22 20:24:55 2026
+Wed Sep 30 00:27:40 2026

@@ -11,7 +11,7 @@ label wake_interact:
             ypos int(178)
             idle "casket_idle"
             hover "casket_hover"
-            action Jump("wake_continue")
+            action Jump("wake_casket")
 
         imagebutton: #for flowers
             #oh my god i didnt put int..no wonder it took so long to align. js dont touch this lol
@@ -19,14 +19,14 @@ label wake_interact:
             ypos(2) # reminder for mika that higher value = lower placement/lower value = higher placement
             idle "flowers_idle"
             hover "flowers_hover"
-            action Jump("wake_continue")
+            action Jump("wake_flowers")
 
         imagebutton: #forchairs
             xpos int(487)
             ypos int(455)
             idle "chair_idle"
             hover "chair_hover"
-            action Jump("wake_continue")
+            action Jump("wake_chairs")
 
         #Jump("clicked_button")]
 

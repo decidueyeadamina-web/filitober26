@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 88: expected ':' not found.
-    label wake_continue
-                       ^
+File "game/script.rpy", line 158: expected end of line
+    stop sound "distorted_background_people_talking-spooktober_2026.ogg" fadeout 0.5
+               ^
 
-Ren'Py Version: Ren'Py 8.5.3.26051504
-Tue Sep 22 20:43:52 2026
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Wed Sep 30 02:33:37 2026

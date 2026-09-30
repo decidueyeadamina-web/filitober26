@@ -7,7 +7,7 @@ define m = Character("Mika")
 screen toothbrush_changer():
     imagebutton: #for toothbrush
     # using int for more precise placement
-        xpos int(610) # reminder for mika higher value = move right/lower value = move left
+        xpos int(610) # reminder for mika higher value = move right/lower value = move left (ty for that reminder i will be using it(AD))
         ypos int(593) # reminder for mika that higher value = lower placement/lower value = higher placement
         idle "toothbrush_idle.png"
         hover "toothbrush_hover.png"
