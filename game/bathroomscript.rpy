@@ -11,14 +11,14 @@ screen toothbrush_changer():
         ypos int(593) # reminder for mika that higher value = lower placement/lower value = higher placement
         idle "toothbrush_idle.png"
         hover "toothbrush_hover.png"
-        action Jump("continue_on")
+        action Jump("bathroom_toothbrush")
 
     imagebutton: #for soap
         xpos int(1105)
         ypos int(860)
         idle "soap_idle.png"
         hover "soap_hover.png"
-        action Jump("um_no")
+        action Jump("bathroom_soap")
 
 screen emotion_changer():
     imagebutton:
@@ -27,3 +27,12 @@ screen emotion_changer():
         idle "orangesadface.png"
         hover "redsadface.png"
         action Jump("continue_on")
+
+screen bathroom_ghost():
+    imagebutton: #for lourde
+    # using int for more precise placement
+        xpos int(610) # reminder for mika higher value = move right/lower value = move left (ty for that reminder i will be using it(AD))
+        ypos int(593) # reminder for mika that higher value = lower placement/lower value = higher placement
+        idle "ghost_idle.png"
+        hover "ghost_hover.png"
+        action Jump("bathroom_ghostclick")
