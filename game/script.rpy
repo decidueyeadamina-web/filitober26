@@ -465,7 +465,7 @@ label bedroomscene_continue1:
 
         #stop sound "heartbeat"
 
-        scene bedroom
+        scene bedroom_van
         play music "Guilt_Route.ogg" loop fadein 5.0
         #play sound "crickets-spooktober_2026" loop fadein 2.0
 
@@ -548,7 +548,7 @@ label bedroomscene_continue1:
 
         mai "{i}Her mind is surprisingly empty as she falls into her much needed slumber.{/i}"
 
-        scene bedroom
+        scene bedroom_van
         with dissolve
 
         #play music "spooky" fadein loop
@@ -612,7 +612,7 @@ label bedroomscene_continue1:
 
         ma "{i}Huh? That could not have been a dream that time.{/i}"
 
-        show lourdes_fullbathroom
+        show lourde_fullbathroom
         with dissolve
 
         play sound "woman_crying-spooktober_2026"
@@ -629,8 +629,7 @@ label bedroomscene_continue1:
         
         ma "{i}The cold water feels so refreshing on my warm skin. The sweat on my face washes away into the sink.{/i}"
 
-        # JUMPSCARE HERE figure out how to set a timer for that but it should be a show then hide but like if then with it
-        #sorry mika if ur reading this that might have made all the sense or been some bulshit
+        play movie "jumpscare_2.ogv"
 
         play sound "woman_scream2-spooktober_2026.ogg"
         
